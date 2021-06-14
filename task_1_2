@@ -1,0 +1,26 @@
+cubes_uneven = [i**3 for i in range(0, 1001) if i % 2 == 1]
+print(cubes_uneven)
+
+sum_total = 0
+for i in cubes_uneven:
+    sum_i = 0
+    num_mod = i
+    while num_mod != 0:
+        sum_i += num_mod % 10
+        num_mod //= 10
+    if sum_i % 7 == 0:
+        sum_total += i
+
+print(sum_total)
+
+for i in cubes_uneven:
+    i += 17
+    sum_i = 0
+    num_mod = i
+    while num_mod != 0:
+        sum_i += num_mod % 10
+        num_mod //= 10
+    if sum_i % 7 == 0:
+        sum_total += i
+
+print(sum_total)
