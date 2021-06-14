@@ -1,0 +1,9 @@
+numbers = [i for i in range(0, 21)]
+
+for number in numbers:
+    if number == 1:
+        print(number, 'процент')
+    elif 1 < number <= 4:
+        print(number, 'процента')
+    else:
+        print(number, 'процентов')
