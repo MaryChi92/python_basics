@@ -1,0 +1,12 @@
+example_1 = 15 * 3
+example_2 = 15 / 3
+example_3 = 15 // 2
+example_4 = 15 ** 2
+
+print(example_1, type(example_1), '\n', example_2, type(example_2), '\n', example_3, type(example_3) == int, '\n',
+      example_4, isinstance(example_4, int))
+
+''' вопрос по сепаратору - он неправильно у меня отрабатывает, 2 и 3 выражения все равно выводятся с пробелом в начале
+строки. в итоге наверно было правильнее оформить 4мя принтами?)))'''
+print(f"{example_1}: {type(example_1)} \n {example_2}: {type(example_2)} \n {example_3}: {type(example_3) == int} \n"
+      f"{example_4}: {isinstance(example_4, int)}", sep='')
