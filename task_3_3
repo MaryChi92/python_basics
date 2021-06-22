@@ -1,0 +1,11 @@
+def thesaurus(*args):
+    names = {}
+    for arg in args:
+        key = arg[0]
+        if key not in names:
+            names[key] = []
+        names[key].append(arg)
+    return names
+
+
+print(thesaurus("Иван", "Мария", "Петр", "Илья", "Вячеслав", "Дарья"))
