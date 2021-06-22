@@ -1,0 +1,22 @@
+num_translation = {
+    'zero': 'ноль',
+    'one': 'один',
+    'two': 'два',
+    'three': 'три',
+    'four': 'четыре',
+    'five': 'пять',
+    'six': 'шесть',
+    'seven': 'семь',
+    'eight': 'восемь',
+    'nine': 'девять',
+    'ten': 'десять'
+}
+
+
+def num_translate_adv(num):
+    return num_translation.get(num.lower()).title() if num[0].isupper() else num_translation.get(num)
+
+
+print(num_translate_adv('five'))
+print(num_translate_adv('fifty'))
+print(num_translate_adv('Ten'))
