@@ -1,0 +1,38 @@
+""" Женя, к сожалению, не получилось у меня до конца доработать это задание. Не идут в вывод во внутреннем словаре все имена
+сотрудников. Пробовала 7 раз писать разный код, но, видимо, я каждый раз иду по какому-то нерациональному пути, запутываю 
+себя и ничего не выходит. Наверно можно решить как-то просто через setdefault, но у меня уже ничего не выходит. Отправлю, что
+есть. Но там либо перезатираются значения, либо имя не подпадает под условие и не попадает в список."""
+
+def thesaurus_adv(*args):
+    staff = {}
+    for i, arg in enumerate(args):
+        person = arg.split(' ')
+        key_1 = person[1][0]
+        if key_1 not in staff:
+            staff[key_1] = {}
+        inner_list = [person[0][0], arg]
+        staff[key_1] = {inner_list[j]: inner_list[j + 1] for j in range(0, len(inner_list), 2)}
+    return staff
+
+
+print(thesaurus_adv("Иван Сергеев", "Инна Серова", "Петр Алексеев", "Илья Иванов", "Анна Савельева"))
+
+
+def thesaurus_adv(*args):
+    staff = {}
+    for arg in args:
+        inner_list = []
+        key_1 = arg.split(' ')[1][0]
+        key_2 = arg[0]
+        if key_1 not in staff:
+            staff[key_1] = {}
+            if key_2 not in staff[key_1]:
+                inner_list.append(arg)
+                staff[key_1] = {key_2: inner_list}
+            else:
+                inner_list.append(arg)
+            staff[key_1] = {key_2: inner_list}
+    return staff
+
+
+    print(thesaurus_adv("Иван Сергеев", "Инна Серова", "Петр Алексеев", "Илья Иванов", "Анна Савельева"))
