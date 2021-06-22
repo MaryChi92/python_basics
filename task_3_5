@@ -1,0 +1,24 @@
+from random import choice
+nouns = ["автомобиль", "лес", "огонь", "город", "дом"]
+adverbs = ["сегодня", "вчера", "завтра", "позавчера", "ночью"]
+adjectives = ["веселый", "яркий", "зеленый", "утопичный", "мягкий"]
+
+
+def get_jokes(num, unique):
+    """Returning list of n jokes"""
+    res = 0
+    jokes = []
+    while res < num:
+        noun, adverb, adjective = map(choice, (nouns, adverbs, adjectives))
+        jokes.append(f'{noun} {adverb} {adjective}')
+        res += 1
+        if unique == 'yes':
+            nouns.remove(noun)
+            adverbs.remove(adverb)
+            adjectives.remove(adjective)
+        else:
+            continue
+    return jokes
+
+
+print(get_jokes(unique='yes', num=3))
